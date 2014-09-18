@@ -11,3 +11,5 @@ ogr2ogr -f “ESRI Shapefile” -a_srs “EPSG:32198″ ./projectedShapefiles $i
 echo “Processing Done!”
 
 done
+
+#testing...
