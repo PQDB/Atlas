@@ -1,17 +1,24 @@
 #!/bin/bash
+#Jordan Quan Sept26, 2014
 
-for shp in *.shp
+#place script in desired folder
+#run script to convert coordinate system of all .shp files to Quebec Lambert
+#converted files will be placed in a new sub folder
+
+for foo in *.shp
 
 do
 
-echo “Converting $shp”
+ echo "Converting $foo"
 
-ogr2ogr -t_srs EPSG:32198 $shp.shp $shp.shp
+ ogr2ogr -overwrite -t_srs EPSG:32198 "./Conversions/$foo" $foo
 
-echo "Done Processing $shp"
+ echo "Done converting $foo"
 
-echo "Resulting Shapefile info:"
+ echo "Resulting file info:"
 
-ogrinfo -al -so $shp.shp
+ ogrinfo -al -so "./Conversions/$foo"
+
+ echo ""
 
 done
