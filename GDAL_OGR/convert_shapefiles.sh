@@ -1,5 +1,5 @@
 #!/bin/bash
-#Jordan Quan Sept29, 2014
+#Jordan Quan, Oct1, 2014
 
 #Place script in desired folder
 #Reprojects shapefiles to EPSG:32198
