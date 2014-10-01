@@ -1,6 +1,8 @@
 #!/bin/bash
 #Jordan Quan Sept26, 2014
 
+#OLD(cleaned and renamed), REMOVE
+
 #place script in desired folder
 #run script to convert coordinate system of all .shp files to Quebec Lambert
 #converted files will be placed in a new sub folder

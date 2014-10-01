@@ -1,5 +1,5 @@
 #!/bin/bash/
-
+# OLD REMOVE
 
 DATA=`find . -name '*.shp'`
 

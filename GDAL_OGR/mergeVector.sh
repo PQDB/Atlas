@@ -1,6 +1,7 @@
 #!/bin/bash
 #Jordan Quan Sept26, 2014
 
+#OLD, REMOVE
 #place script in folder with desired Vector Shapefiles
 #run script to merge all files into one
 
