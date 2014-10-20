@@ -1,6 +1,9 @@
 #!/bin/bash
-# Jordan Quan, Oct1, 2014
-#Clips shapefiles using a bounding.shp
+
+# FILE: clip_shapefiles.sh
+# DESC: clips shapefiles using a bounding.shp
+# AUTHOR: Jordan Quan
+# LAST REVISED: 2014/10/20
 
 #Place script in folder with desired shapefiles
 #MAKE SURE ALL FILES ARE IN SAME REFERENCE SYSTEM!!

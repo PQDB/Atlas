@@ -1,20 +1,27 @@
 #!/bin/bash
-#Jordan Quan, Oct1, 2014
 
-#place script in folder with desired Shapefiles
-#run script to merge all files into one
+# FILE: merge_shapefiles.sh
+# DESC: merge all shapefiles in folder
+# AUTHOR: Jordan Quan
+# LAST REVISED: 2014/10/20
 
-echo "Creating merged.shp"
+#create initial merged.shp
+for first in *.shp
+do
+	echo "Creating merged.shp from $first"
+	ogr2ogr -f "ESRI Shapefile" merged.shp $first
+	break
+done
 
 for foo in *.shp
 do
-	echo "Merging $foo"
-	ogr2ogr -update -append merged.shp $foo -f "ESRI Shapefile" -nln merge
+	#append with remaining .shp's
+	if [ "$foo" != "$first" ] && [ "$foo" != "merged.shp" ]
+	then
+		echo "Merging $foo..."
+		ogr2ogr -update -append merged.shp $foo -nln merged
+	fi
 done
 
-#dissolve
-#merge features in shapefile by common attribute
-ogr2ogr dissolved.shp merged.shp -dialect sqlite -sql "select ST_union(Geometry), common_attribute from input GROUP BY common_attribute"
-
 echo "Resulting file info:"
-ogrinfo -al -so dissolved.shp
+ogrinfo -al -so merged.shp

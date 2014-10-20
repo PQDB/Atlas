@@ -1,6 +1,11 @@
 #!/bin/bash
-# Jordan Quan, Oct1, 2014
-#Clips raster tif files using a bounding.shp
+
+# FILE: clip_raster.sh
+# DESC: clip raster .tif's using a bounding.shp
+# AUTHOR: Jordan Quan
+# LAST REVISED: 2014/10/20
+
+# need to test
 
 #Place script in folder with desired raster files
 #MAKE SURE ALL FILES ARE IN SAME REFERENCE SYSTEM!!
