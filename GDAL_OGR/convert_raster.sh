@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# FILE: convert_raster.sh
+# DESC: convert .tif's to Quebec Lambert EPSG:32198
+# AUTHOR: Jordan Quan
+# LAST REVISED: 2014/10/24
+
 #Place script in desired folder
-#Reprojects shapefiles to EPSG:32198
 #Append -r option to use bilinear projection (for elevation data)
 #The converted raster files are place in the converted subdirectory
 
