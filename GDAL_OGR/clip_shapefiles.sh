@@ -13,7 +13,7 @@
 #NOTE: cant overwrite, will cause error
 
 #ARGUMENTS
-#args $1: -b clips to box, -p clips to poly (takes much longer)
+#args $1: -b (or anything rly...) clips to box, -p clips to poly (takes much longer)
 #args $2: mask.shp
 #args $3: input.shp (optional, leave blank to clip all in folder
 
@@ -37,11 +37,9 @@ if [ "$#" = "2" ];then
 	do
 		echo "clipping $INPUT to box..."
 		ogr2ogr -f "ESRI Shapefile" -clipsrc $EXTENT boxclip/$INPUT $INPUT
-		echo "boxclip complete"
 		if [ "$1" = "-p" ]; then
 			echo "clipping $INPUT to poly..."
 			ogr2ogr -clipsrc $MASK polyclip/$INPUT boxclip/$INPUT
-			echo "polyclip complete"
 		fi
 	done
 	echo "All clipping complete"
@@ -51,12 +49,11 @@ elif [ "$#" = "3" ]; then
 	INPUT=$3
 	echo "clipping $INPUT to box..."
 	ogr2ogr -f "ESRI Shapefile" -clipsrc $EXTENT boxclip/$INPUT $INPUT
-	echo "boxclip complete"
 	if [ "$1" = "-p" ]; then
 		echo "clipping $INPUT to poly..."
 		ogr2ogr -clipsrc $MASK polyclip/$INPUT boxclip/$INPUT
-		echo "polyclip complete"
 	fi
+	echo "Clipping $INPUT complete"
 else 
 	echo "please input command -b/-p mask input(optional)"
 fi
