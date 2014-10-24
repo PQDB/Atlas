@@ -1,11 +1,12 @@
 #!/bin/bash
-#Jordan Quan, Oct1, 2014
 
-#place script in folder with desired raster tif files
-#run script to merge all files into one
+# FILE: merge_raster.sh
+# DESC: merges all tif's in folder
+# AUTHOR: Jordan Quan
+# LAST REVISED: 2014/10/24
+
+#may need to manually save style from input and apply to output afterwards
 
 echo "Merging rasters..."
 gdal_merge.py -o output.tif `ls *.tif`
-#to preserve no data values?
-#gdalwarp input1.tif input2.tif merged.tif -srcnodata <nodata_value> -dstnodata <merged_nodata_value>
 echo "Finished merging"
