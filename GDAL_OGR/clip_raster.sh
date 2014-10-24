@@ -3,15 +3,13 @@
 # FILE: clip_raster.sh
 # DESC: clip raster .tif's using a bounding.shp
 # AUTHOR: Jordan Quan
-# LAST REVISED: 2014/10/20
-
-# need to test
+# LAST REVISED: 2014/10/24
 
 #Place script in folder with desired raster files
 #MAKE SURE ALL FILES ARE IN SAME REFERENCE SYSTEM!!
 #ie. run the convert scripts first
 #input arguments: script, cliptype, mask, input
-#The clipped raster files are placed in boxclip and polyclip subdirectories
+#The clipped raster files are placed in boxclip or polyclip subdirectories
 #NOTE: cant overwrite, will cause error
 
 #ARGUMENTS
@@ -64,3 +62,5 @@ if [ "$1" = "-p" ]; then
 		gdalwarp -cutline $MASK -crop_to_cutline $INPUT polyclip/$INPUT
 	fi
 fi
+
+echo "clipping complete"
