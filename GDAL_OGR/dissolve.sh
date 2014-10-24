@@ -3,10 +3,9 @@
 # FILE: dissolve.sh
 # DESC: dissolve features in shapefile by common attribute
 # AUTHOR: Jordan Quan
-# LAST REVISED: 2014/10/20
+# LAST REVISED: 2014/10/22
 
-#need to test
-#seems to take foreeeeever...
+#need to retest
 
 if [ "$#" != "2" ]; then
 	echo "Please input command: input[no suffix] attribute"
@@ -16,6 +15,3 @@ else
 	echo "Dissolving by $ATTR..."
 	ogr2ogr dissolved.shp $INPUT.shp -dialect sqlite -sql "select ST_Union(Geometry), $ATTR from $INPUT GROUP BY $ATTR"
 fi
-
-#echo "$1 , $2"
-#ogrinfo -al -so $1
