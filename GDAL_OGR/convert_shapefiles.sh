@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # FILE: convert_shapefiles.sh
-# DESC: reproject shapefiles to Quebec Lambert EPSG:32198
+# DESC: reproject all shapefiles in folder to Quebec Lambert
 # AUTHOR: Jordan Quan
-# LAST REVISED: 2014/10/24
+# LAST REVISED: 2014/10/27
 
+#Place script in desired folder
+#Reprojects shapefiles to EPSG:32198
 #Input name of file to convert one, or leave blank to convert all in folder
 #The converted shapefiles are place in the converted subdirectory
 
