@@ -12,5 +12,5 @@ for shp in *.shp
 do
 	temp="${shp##*/}" 
 	name="${temp%.*}"
-    shp2pgsql -W "latin1" $shp public.$name | psql -d AtlasData
+    shp2pgsql -s 32198 -W "latin1" $shp public.$name | psql -d AtlasData
 done
